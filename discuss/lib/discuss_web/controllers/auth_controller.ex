@@ -24,6 +24,12 @@ defmodule DiscussWeb.AuthController do
     |> redirect(to: Routes.topic_path(conn, :index))
   end
 
+  def signout(conn, _params) do
+    conn
+    |> configure_session(drop: true)
+    |> redirect(to: Routes.topic_path(conn, :index))
+  end
+
   defp error(conn) do
     conn
     |> put_flash(:error, "Error signing in")
