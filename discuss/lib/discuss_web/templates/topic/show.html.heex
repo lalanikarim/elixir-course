@@ -1,2 +1,12 @@
-<h2>Topic</h2>
-<label><%= @topic.title %></label>
+<h3><%= @topic.title %></h3>
+<div class="input-field">
+  <textarea class="materialize-textarea"></textarea>
+  <button class="btn">Add Comment</button>
+  <ul class="collection">
+  </ul>
+</div>
+<script charset="utf-8">
+  document.addEventListener("DOMContentLoaded", function(){
+    window.createSocket(<%= @topic.id %>)
+  })
+</script>

@@ -1,7 +1,6 @@
 defmodule Discuss.User do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Discuss.User
 
   schema "users" do
     field :email, :string
@@ -9,6 +8,7 @@ defmodule Discuss.User do
     field :token, :string
 
     has_many :topics, Discuss.Topic
+    has_many :comments, Discuss.Comment
 
     timestamps()
   end
